@@ -8,6 +8,10 @@
 
   transition: transform 0.3s;
 
+  @include responsive(tablet) {
+    margin-bottom: 0;
+  }
+
   &:hover {
     transform: translateY(-1.5rem) scale(1.01);
   }
