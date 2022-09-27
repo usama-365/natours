@@ -42,7 +42,7 @@
 
   &__content {
     @include absCenter;
-    width: 75%;
+    width: 80%;
     background-color: $color-white;
     // height: 50rem;
     box-shadow: 0 2rem 4rem rgba($color-black, 0.2);
@@ -51,6 +51,11 @@
     overflow: hidden;
     transition: all 0.4s 0.2s;
 
+    @include responsive(tablet-desktop) {
+      display: block;
+      width: 60%;
+    }
+
     transform: translate(-50%, -50%) scale(0);
   }
 
@@ -58,6 +63,10 @@
     width: 33.33333333333%;
     display: table-cell;
     vertical-align: middle;
+    @include responsive(tablet-landscape) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__right {
@@ -65,11 +74,22 @@
     display: table-cell;
     vertical-align: middle;
     padding: 3rem 5rem;
+    @include responsive(tablet-landscape) {
+      width: 100%;
+      display: block;
+    }
   }
 
   &__image {
     display: block;
     width: 100%;
+    @include responsive(tablet-landscape) {
+      width: 49%;
+      transform: scale(1.2);
+      height: auto;
+      display: inline-block;
+      margin: 0;
+    }
   }
 
   &__text {
@@ -81,5 +101,9 @@
     column-rule: 2px solid $color-light-gray;
 
     hyphens: auto;
+
+    @include responsive(mobile) {
+      column-count: 1;
+    }
   }
 }
