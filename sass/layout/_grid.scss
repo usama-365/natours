@@ -5,6 +5,14 @@
   // Only apply to non-last child
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+    @include responsive(tablet) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+
+  @include responsive(tablet) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
   @include clearfix;
@@ -14,6 +22,14 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+      @include responsive(tablet) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include responsive(tablet) {
+      width: 100% !important;
     }
   }
 
